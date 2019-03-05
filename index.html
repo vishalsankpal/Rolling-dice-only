@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Javascript Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+    </head>
+    <body>
+       <main>
+           <section>
+               <div class="container" >
+                   <h1 class="game-first-state" id="winning-status">Lets play Game</h1>
+                   <div class="row" id="game-part"style="visibility:hidden;">
+                        <div class=" col-md-6 dice">
+                            <h1 class="players">Player 1</h1>
+                            <img src="./images/dice-1.png" class="dice-image" id="player1-dice">
+                        </div>
+                        <div class="col-md-6 dice">
+                            <h1 class="players">Player 2</h1>
+                            <img src="./images/dice-1.png" class="dice-image" id="player2-dice">
+                        </div>
+                        <div class="rolldiceblock">
+                            <button class="rolling-dice-button" onclick="ludogame()">Roll Dice</button>
+                            
+                        </div>
+                        <div class="stop-game-dice-back-to-start">
+                            <button class="stop-game" onclick="stop()">Stop Game</button>
+                        </div>
+                    </div>
+                    <div class="lets-play-game" id="start-button">
+                        <button class="start-game" onclick="start()">Start Game</button>
+                    </div>
+               </div>
+           </section>
+
+       </main>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script >
+            ludogame = () =>{
+              let player1 =  Math.floor(Math.random() * 6 ) + 1;
+              let player2 =  Math.floor(Math.random() * 6 ) + 1;
+              let playerDicenumber1 = `./images/dice-${player1}.png`;
+              let playerDicenumber2 = `./images/dice-${player2}.png`;
+              document.getElementById('player1-dice').setAttribute('src',playerDicenumber1);
+              document.getElementById('player2-dice').setAttribute('src',playerDicenumber2);
+            //   for checking the condition which player won the game
+            if(player1 > player2)
+            {
+                document.getElementById('winning-status').innerHTML = 'player1 won the match';
+            }
+            else if(player1 < player2)
+            {
+                document.getElementById('winning-status').innerHTML = 'player2 won the match';
+            }
+            else{
+                document.getElementById('winning-status').innerHTML = 'Draw';
+            }
+            }
+            start = ()=>{
+                document.getElementById("game-part").style.visibility='visible';
+                document.getElementById('start-button').style.visibility='hidden';
+            }
+            stop = () =>{
+                document.getElementById("game-part").style.visibility='hidden';
+                document.getElementById('start-button').style.visibility='visible';
+                document.getElementById('winning-status').innerHTML = 'Lets play Game';
+            }
+        </script>
+    </body>
+</html>

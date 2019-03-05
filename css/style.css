@@ -1,0 +1,101 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    font-family: cursive;
+}
+main .dice .players{
+    text-align: center;
+    color: white;
+}
+main .game-first-state{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    margin: 50px auto;
+    font-size: 4rem;
+    background: -webkit-linear-gradient(318deg, #12c2e9, #b92b27, #c31432,#009fff,#ff416c,#8a2387,#ed213a);
+			background: -o-linear-gradient(318deg, #12c2e9, #b92b27, #c31432,#009fff,#ff416c,#8a2387,#ed213a);
+			background: linear-gradient(132deg, #12c2e9, #b92b27, #c31432,#009fff,#ff416c,#8a2387,#ed213a);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			
+			background-size: 400% 400%;
+			-webkit-animation: textcolorchange 15s linear infinite;
+			        animation: textcolorchange 15s linear infinite;
+}
+@keyframes textcolorchange{
+    0%{
+        background-position: 0% 50%;
+    }
+    25%{
+        background-position: 50% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    75%{
+        background-position: 75% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+main .dice{
+    text-align: center;
+}
+main .dice .dice-image{
+    border-radius: 50px;
+    margin: 30px;
+    box-shadow: 0px 0px 30px white;
+    transition: all 0.5s;
+}
+main .rolldiceblock{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%;
+}
+main .rolldiceblock .rolling-dice-button{
+    width: 8rem;
+    height: 4rem;
+    border-radius: 14px;
+    border: 1px solid #931b1bd6;
+    color: #d91515c4;
+    background-color: white;
+    cursor: pointer;
+}
+main .stop-game-dice-back-to-start{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 63%;
+    left:50%;
+}
+main .stop-game-dice-back-to-start .stop-game{
+    width: 8rem;
+    height: 4rem;
+    border-radius: 14px;
+    border: 1px solid #931b1bd6;
+    color: #d91515c4;
+    background-color: white;
+    cursor: pointer;
+}
+main .lets-play-game{
+    text-align: center;
+    font-size: 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    
+}
+main .lets-play-game .start-game{
+    color:#d91515c4;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 30px;
+}
+
+			
+		
